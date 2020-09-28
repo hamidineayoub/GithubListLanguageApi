@@ -11,13 +11,13 @@ list languages used by the 100 trending public repos on Github created in the la
 API Endpoints
 =======
 
-All
+##All
 ---------------
 
 ``` html
 https://git-repos-languages.herokuapp.com/languages/list
 ```
-  Response Example
+  ###Response Example
   ---------------
 
 ``` json
