@@ -1,11 +1,10 @@
 package com.gemography.github.list.languages.api.app.modules;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LanguageDetails {
     private String name;
-    private List<String> repos = new ArrayList<String>();
+    private List<String> repos;
     private int count;
 
     public LanguageDetails(String name, List<String> repos) {

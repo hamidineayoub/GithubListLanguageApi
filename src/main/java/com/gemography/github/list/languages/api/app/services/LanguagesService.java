@@ -7,5 +7,5 @@ public interface LanguagesService {
 
     ResponseEntity getAllLanguages() ;
 
-    ResponseEntity<GitResponse> getResponse() ;
+    ResponseEntity<GitResponse> getRepos() ;
 }

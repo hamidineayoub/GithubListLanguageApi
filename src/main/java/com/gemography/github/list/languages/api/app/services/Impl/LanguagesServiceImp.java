@@ -30,16 +30,14 @@ public class LanguagesServiceImp implements LanguagesService {
     @Autowired
     DateTimeFormatter dateTimeFormatter;
 
-    @Autowired
-    MapperUtils mapperUtils;
 
     public ResponseEntity getAllLanguages() {
         try {
-            ResponseEntity<GitResponse> responseEntity = getResponse();
+            ResponseEntity<GitResponse> responseEntity = getRepos();
             if (responseEntity.getStatusCode().equals(HttpStatus.OK)) {
                 GitResponse response = responseEntity.getBody();
                 return new ResponseEntity(
-                        new ArrayList<>(mapperUtils.itemsToListLanguages(response.getItems()).values()),
+                        new ArrayList<>(MapperUtils.itemsToListLanguages(response.getItems()).values()),
                         responseEntity.getStatusCode()
                 );
             }
@@ -50,7 +48,7 @@ public class LanguagesServiceImp implements LanguagesService {
 
     }
 
-    public ResponseEntity<GitResponse> getResponse() {
+    public ResponseEntity<GitResponse> getRepos() {
         HttpHeaders headers = new HttpHeaders();
         headers.set("Accept", MediaType.APPLICATION_JSON_VALUE);
 
